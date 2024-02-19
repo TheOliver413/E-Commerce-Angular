@@ -1,12 +1,15 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { CounterComponent } from './../../../shared/components/counter/counter.component';
+import { WaveAudioComponent } from './../../../info/components/wave-audio/wave-audio.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CounterComponent],
+  imports: [CommonModule, CounterComponent, WaveAudioComponent],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
   duration = signal(1000);
@@ -14,11 +17,11 @@ export class AboutComponent {
 
   changeDuration(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.duration.set(input.valueAsNumber);
+    this.duration.set(input.valueAsNumber)
   }
 
   changeMessage(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.message.set(input.value);
+    this.message.set(input.value)
   }
 }
