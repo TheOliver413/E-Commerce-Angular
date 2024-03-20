@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { CounterComponent } from '@shared/components/counter/counter.component';
 import { HighligthDirective } from '@shared/directives/highligth.directive';
 import { WaveAudioComponent } from '@info/components/wave-audio/wave-audio.component';
+import { HeaderComponent } from '@shared/components/header/header.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, CounterComponent, WaveAudioComponent, HighligthDirective],
+  imports: [CommonModule, CounterComponent, WaveAudioComponent, HighligthDirective, HeaderComponent],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
