@@ -22,4 +22,9 @@ export class HeaderComponent {
   toogleSideMenu() {
     this.hideSideMenu.update(prevState => !prevState);
   }
+
+  handleImageError(event: Event) {
+    const element = event.target as HTMLImageElement;
+    element.src = '../../../../../assets/default-product.png'; // Ruta de la imagen por defecto
+  }
 }

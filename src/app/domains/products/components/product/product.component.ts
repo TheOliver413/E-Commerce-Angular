@@ -10,7 +10,7 @@ import { RouterLinkWithHref } from '@angular/router';
   standalone: true,
   imports: [CommonModule, ReversePipe, TimeAgoPipe, RouterLinkWithHref],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
   @Input({required: true}) product !: Product;
@@ -19,5 +19,10 @@ export class ProductComponent {
 
   addToCartHandler() {
     this.addToCart.emit(this.product);
+  }
+
+  handleImageError(event: Event) {
+    const element = event.target as HTMLImageElement;
+    element.src = '../../../../../assets/default-product.png';
   }
 }
